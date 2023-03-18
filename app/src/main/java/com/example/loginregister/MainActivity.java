@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+
 import com.example.loginregister.databinding.ActivityMainBinding;
 
 
@@ -34,13 +35,13 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new CartFragment());
                     break;
             }
-
             return true;
         });
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
 
+        //notification
 
 
     }

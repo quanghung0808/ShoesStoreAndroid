@@ -2,13 +2,29 @@ package com.example.loginregister;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.loginregister.model.GenericShoes;
 import com.squareup.picasso.Picasso;
+
+import android.content.Context;
+import android.widget.Button;
+import android.view.View;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import java.util.Date;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -41,6 +57,35 @@ public class DetailActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             setTitle("Detail Page");
         }
+        //notification
+        Button btnSendNotification = findViewById(R.id.add);
+        btnSendNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendNotification();
+            }
+        });
 
+
+
+    }
+
+
+    //notification
+    private void sendNotification(){
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round);
+        android.app.Notification notification = new Notification.Builder(this).setContentTitle("Title push notifitaction")
+                .setContentText("Message push notification")
+                .setSmallIcon(R.drawable.baseline_notifications_active_24)
+                .setLargeIcon(bitmap)
+                .build();
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (notificationManager != null){
+            notificationManager.notify(getNotificationId(), notification);
+        }
+    }
+    //notification
+    private int getNotificationId(){
+        return (int)  new Date().getTime();
     }
 }
