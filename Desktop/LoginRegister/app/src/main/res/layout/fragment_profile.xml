@@ -111,7 +111,19 @@
                 android:gravity="center"
                 android:text="Update"
                 android:textColor="#fff"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4sp"
+                android:backgroundTint="#3A9AFF"
+                android:fontFamily="@font/poppinsbold"
+                android:gravity="center"
+                android:text="Chat"
+                android:textColor="#fff"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/logout"

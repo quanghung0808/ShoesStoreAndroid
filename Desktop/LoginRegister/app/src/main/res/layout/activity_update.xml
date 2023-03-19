@@ -10,8 +10,8 @@
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/grad"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/grad"
         android:paddingBottom="0dp">
 
 
@@ -35,9 +35,8 @@
             android:id="@+id/layoutText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/updateImage"
-      >
+            android:layout_centerHorizontal="true">
 
             <EditText
                 android:id="@+id/nameUpdate"
@@ -48,24 +47,23 @@
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="9dp"
                 android:layout_marginBottom="9dp"
-                android:gravity="center"
-                android:fontFamily="sans-serif-black"
-                android:textSize="35dp"
-                android:textStyle="bold"
                 android:adjustViewBounds="true"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
                 android:padding="3dp"
-                android:text="Joey Tribbiani"
                 android:scaleType="centerInside"
-               />
+                android:text="Joey Tribbiani"
+                android:textSize="35dp"
+                android:textStyle="bold" />
         </RelativeLayout>
+
         <RelativeLayout
-            android:layout_marginBottom="10dp"
             android:id="@+id/layoutEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/layoutText"
-            >
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/emailUpdate"
@@ -74,13 +72,12 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginEnd="9dp"
                 android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:textSize="20dp"
                 android:adjustViewBounds="true"
+                android:gravity="center"
                 android:padding="3dp"
-                android:text="Joey@gmail.com"
                 android:scaleType="centerInside"
-                />
+                android:text="Joey@gmail.com"
+                android:textSize="20dp" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -111,7 +108,19 @@
                 android:gravity="center"
                 android:text="Update"
                 android:textColor="#fff"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4sp"
+                android:backgroundTint="#3A9AFF"
+                android:fontFamily="@font/poppinsbold"
+                android:gravity="center"
+                android:text="Chat"
+                android:textColor="#fff"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/logout"

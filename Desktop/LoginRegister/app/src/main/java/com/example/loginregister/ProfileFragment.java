@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.loginregister.model.ChatUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -47,7 +48,7 @@ public class ProfileFragment extends Fragment {
     FirebaseAuth mAuth;
     EditText nameUpdate;
     TextView emailUpdate;
-    Button updateProfile, logout;
+    Button updateProfile, logout, chat;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -119,6 +120,7 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_profile, container, false);
 
+        chat = rootView.findViewById(R.id.chat);
         updateImage = rootView.findViewById(R.id.updateImage);
         updateProfile = rootView.findViewById(R.id.updateProfile);
         logout = rootView.findViewById(R.id.logout);
@@ -131,6 +133,11 @@ public class ProfileFragment extends Fragment {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             pickImage.launch(intent);
+        });
+
+        chat.setOnClickListener(view -> {
+            Intent intent = new Intent(this.getContext(), Chat.class);
+            startActivity(intent);
         });
 
         DocumentReference df = mStore.collection("Users").document(mAuth.getCurrentUser().getUid());

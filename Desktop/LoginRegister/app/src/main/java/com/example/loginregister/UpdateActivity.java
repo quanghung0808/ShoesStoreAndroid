@@ -40,12 +40,13 @@ public class UpdateActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     EditText nameUpdate;
     TextView emailUpdate;
-    Button updateProfile, logout;
+    Button updateProfile, logout, chat;
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
+        chat = findViewById(R.id.chat);
         updateImage = findViewById(R.id.updateImage);
         updateProfile = findViewById(R.id.updateProfile);
         logout = findViewById(R.id.logout);
@@ -58,6 +59,11 @@ public class UpdateActivity extends AppCompatActivity {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             pickImage.launch(intent);
+        });
+
+        chat.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ChatAdmin.class);
+            startActivity(intent);
         });
 
         DocumentReference df = mStore.collection("Users").document(mAuth.getCurrentUser().getUid());
