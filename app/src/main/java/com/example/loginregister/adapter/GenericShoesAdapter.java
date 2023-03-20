@@ -96,6 +96,7 @@ public class GenericShoesAdapter extends BaseAdapter {
                 intent.putExtra("shoe_name", genericShoes.getName());
                 intent.putExtra("shoe_price", genericShoes.getPrice());
                 intent.putExtra("shoe_image", genericShoes.getImage());
+                intent.putExtra("shoe_CategoryId", genericShoes.getCategoryId());
 
 
 
