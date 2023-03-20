@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".UpdateActivity">
 
+
     <RelativeLayout
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/grad"
         android:paddingBottom="0dp">
 
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/updateImage"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
@@ -81,7 +81,6 @@
         </RelativeLayout>
 
     </RelativeLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
